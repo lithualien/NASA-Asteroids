@@ -56,8 +56,6 @@ public class Main {
                 }
             }
         }
-
-
     }
 
     private static Connection myConn;
