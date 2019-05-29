@@ -1,6 +1,5 @@
 package com.github.lithualien.ws;
 
-public class CloseApproachResource {
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
