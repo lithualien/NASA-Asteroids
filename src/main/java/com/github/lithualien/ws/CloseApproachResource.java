@@ -31,11 +31,10 @@ public class CloseApproachResource {
     }
     
     
-    
     @GET
     @Path("/biggestProb")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getChangeOfHitting(
+    public Response getChanceOfHitting(
                 @QueryParam("size") int size) {
                 
         return Response.ok()
