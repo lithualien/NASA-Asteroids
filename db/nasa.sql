@@ -53,12 +53,12 @@ DROP TABLE IF EXISTS `close_approach`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `close_approach` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `asteroid_id` int(11) DEFAULT NULL,
+  `asteroidId` int(11) DEFAULT NULL,
   `close_approach_date` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `relative_velocity` double DEFAULT NULL,
-  `miss_distance` double DEFAULT NULL,
+  `relativeVelocity` double DEFAULT NULL,
+  `missDistance` double DEFAULT NULL,
   `impact_probability` double DEFAULT NULL,
-  `orbit_body` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `orbitBody` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13129 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
