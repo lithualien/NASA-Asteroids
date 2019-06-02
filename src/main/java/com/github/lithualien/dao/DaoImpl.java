@@ -204,4 +204,20 @@ public class DaoImpl implements Dao {
         }
         return closeApproachList;
     }
+    
+    
+    @Override
+    public List<CloseApproach> getCloseApproachesOfPlanets(String planetName) {
+        List<CloseApproach> closeApproachList = new ArrayList<>();
+        String query = "SELECT * FROM close_approach WHERE orbit_body = " + "'" + planetName + "'";
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setCloseApproachData(closeApproachList);
+        }
+        catch (SQLException ex) {
+        }
+        return closeApproachList;
+    }
 }

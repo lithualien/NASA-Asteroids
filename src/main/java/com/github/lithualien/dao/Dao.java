@@ -19,5 +19,6 @@ public interface Dao {
     List<CloseApproach> getFastestCloseApproaches(int size);
     List<CloseApproach> getBiggestProbOfHitting(int size);
     List<CloseApproach> getMissDistanceOfCloseApproach(double from);
+    List<CloseApproach> getCloseApproachesOfPlanets(String planetName);
     
 }
