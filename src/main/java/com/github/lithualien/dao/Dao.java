@@ -1,6 +1,7 @@
 package com.github.lithualien.dao;
 
 import com.github.lithualien.data.Asteroid;
+import com.github.lithualien.data.CloseApproach;
 
 import java.util.List;
 
@@ -15,4 +16,8 @@ public interface Dao {
     List<Asteroid> getAsteroidsByDiameterPlus(double from, double to);
     List<Asteroid> getAsteroidsByVelocity(double from, double to);
     List<Asteroid> getHazardousAsteroids();
+    List<CloseApproach> getFastestCloseApproaches(int size);
+    List<CloseApproach> getBiggestProbOfHitting(int size);
+    List<CloseApproach> getMissDistanceOfCloseApproach(double from);
+    
 }

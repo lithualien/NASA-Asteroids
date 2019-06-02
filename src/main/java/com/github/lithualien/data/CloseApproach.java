@@ -13,27 +13,65 @@ public class CloseApproach {
     
     int id;
     int asteroidId;
-    String closeApproachData;
+    String closeApproachDate;
     double relativeVelocity;
     double missDistance;
     String orbitBody;
+    String linkOfAsteroid;
+    double impactPropability; 
 
     /**
      * 
-     * @param id
-     * @param asteroidId
-     * @param closeApproachData
-     * @param relativeVelocity
-     * @param missDistance
-     * @param orbitBody
+     * @param id - id of asteroid approach data
+     * @param asteroidId - id of asteroid
+     * @param closeApproachDate - asteroid close approach date 
+     * @param relativeVelocity - asteroid relative velocity
+     * @param missDistance - asteroid miss distance
+     * @param orbitBody - asteroid orbiting body
+     * @param linkOfAsteroid - link of asteroid
+     * @param impactPropability - propability of hitting the orbiting body
      */
-    public CloseApproach(int id, int asteroidId, String closeApproachData, double relativeVelocity, double missDistance, String orbitBody) {
+    public CloseApproach(int id, int asteroidId, String closeApproachDate, double relativeVelocity, double missDistance, String orbitBody, double impactPropability, String linkOfAsteroid) {
         this.id = id;
         this.asteroidId = asteroidId;
-        this.closeApproachData = closeApproachData;
+        this.closeApproachDate = closeApproachDate;
         this.relativeVelocity = relativeVelocity;
         this.missDistance = missDistance;
         this.orbitBody = orbitBody;
+        this.linkOfAsteroid = linkOfAsteroid;
+        this.impactPropability = impactPropability;
+    }
+
+    /**
+     * Gets impact propability
+     * @return 
+     */
+    public double getImpactPropability() {
+        return impactPropability;
+    }
+
+    /**
+     * Sets impact propability
+     * @param impactPropability 
+     */
+    public void setImpactPropability(double impactPropability) {
+        this.impactPropability = impactPropability;
+    }
+
+    /**
+     * Gets link of asteroid
+     * @return 
+     */
+    public String getLinkOfAsteroid() {
+        return linkOfAsteroid;
+    }
+
+    /**
+     * Sets Ling of asteroid
+     * @param linkOfAsteroid 
+     */
+    public void setLinkOfAsteroid(String linkOfAsteroid) {
+        this.linkOfAsteroid = linkOfAsteroid;
     }
     
     /**
@@ -80,16 +118,16 @@ public class CloseApproach {
      * Get apprach appraoch data
      * @return 
      */
-    public String getCloseApproachData() {
-        return closeApproachData;
+    public String getCloseApproachDate() {
+        return closeApproachDate;
     }
 
     /**
      * Set close approach data
-     * @param closeApproachData
+     * @param closeApproachDate
      */
-    public void setCloseApproachData(String closeApproachData) {
-        this.closeApproachData = closeApproachData;
+    public void setCloseApproachDate(String closeApproachDate) {
+        this.closeApproachDate = closeApproachDate;
     }
 
     /**

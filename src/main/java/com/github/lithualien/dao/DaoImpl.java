@@ -1,6 +1,7 @@
 package com.github.lithualien.dao;
 
 import com.github.lithualien.data.Asteroid;
+import com.github.lithualien.data.CloseApproach;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -141,5 +142,66 @@ public class DaoImpl implements Dao {
             ex.printStackTrace();
         }
         return asteroids;
+    }
+    
+     private void setCloseApproachData(List<CloseApproach> closeApproachList) throws SQLException {
+        while(result.next()) {
+            CloseApproach closeApproach = new CloseApproach(
+                    result.getInt("id"),
+                    result.getInt("asteroid_Id"),
+                    result.getString("close_approach_date"),
+                    result.getDouble("relative_velocity"),
+                    result.getDouble("miss_distance"),
+                    result.getString("orbit_body"),
+                    result.getDouble("impact_propability"),
+                    "http://localhost:8080/NASA-Asteroids/services/asteroids/" + result.getInt("asteroid_Id")
+            );
+            closeApproachList.add(closeApproach);
+        }
+    }
+    
+    @Override
+    public List<CloseApproach> getFastestCloseApproaches(int size) {
+        List<CloseApproach> closeApproachList = new ArrayList<>();
+        String query = "SELECT * FROM close_approach ORDER BY relative_velocity DESC limit " + size;
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setCloseApproachData(closeApproachList);
+        }
+        catch (SQLException ex) {
+        }
+        return closeApproachList;
+    }
+    
+    @Override
+    public List<CloseApproach> getBiggestProbOfHitting(int size) {
+        List<CloseApproach> closeApproachList = new ArrayList<>();
+        String query = "SELECT * FROM close_approach ORDER BY impact_propability DESC limit " + size;
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setCloseApproachData(closeApproachList);
+        }
+        catch (SQLException ex) {
+        }
+        return closeApproachList;
+    }
+    
+    @Override
+    public List<CloseApproach> getMissDistanceOfCloseApproach(double from) {
+        List<CloseApproach> closeApproachList = new ArrayList<>();
+        String query = "SELECT * FROM close_approach WHERE miss_distance >= " + from +" ORDER BY miss_distance DESC";
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setCloseApproachData(closeApproachList);
+        }
+        catch (SQLException ex) {
+        }
+        return closeApproachList;
     }
 }
