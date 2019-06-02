@@ -220,4 +220,34 @@ public class DaoImpl implements Dao {
         }
         return closeApproachList;
     }
+    
+    @Override
+    public List<Asteroid> getBiggestAsteroids(int size) {
+        List<Asteroid> AsteroidsList = new ArrayList<>();
+        String query = "SELECT * FROM `asteroidas` ORDER BY estimated_diameter_max DESC limit " + size;
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setAsteroids(AsteroidsList);
+        }
+        catch (SQLException ex) {
+        }
+        return AsteroidsList;
+    }
+    
+     @Override
+    public List<Asteroid> getSmallestAsteroids(int size) {
+        List<Asteroid> AsteroidsList = new ArrayList<>();
+        String query = "SELECT * FROM `asteroidas` ORDER BY estimated_diameter_min ASC limit " + size;
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setAsteroids(AsteroidsList);
+        }
+        catch (SQLException ex) {
+        }
+        return AsteroidsList;
+    }
 }

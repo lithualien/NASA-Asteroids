@@ -84,4 +84,33 @@ public class AsteroidResource {
                 .entity(dao.getHazardousAsteroids())
                 .build();
     }
+    
+    /**
+     * Web service method for getting biggest asteroids by max diameter
+     * @param size amount of returned objects
+     * @return 
+     */
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/biggest_asteroids")
+    public Response getBiggestAsteroids(
+           @DefaultValue("3") @QueryParam("size") int size) {
+        return Response.ok(200)
+                .entity(dao.getBiggestAsteroids(size))
+                .build();
+    }
+    /**
+     * Web service method for getting biggest asteroids by max diameter
+     * @param size amount of returned objects
+     * @return 
+     */
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/smallest_asteroids")
+    public Response getSmallestAsteroids(
+           @DefaultValue("3") @QueryParam("size") int size) {
+        return Response.ok(200)
+                .entity(dao.getSmallestAsteroids(size))
+                .build();
+    }
 }
