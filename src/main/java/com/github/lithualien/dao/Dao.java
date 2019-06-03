@@ -57,4 +57,11 @@ public interface Dao {
      */
     boolean deleteAsteroid(int id);
     
+    /**
+     * Gets asteroid by its name
+     * @param name of the asteroid 
+     * @return asteroid object
+     */
+     List<Asteroid> getAsteroidByName(String name);
+    
 }

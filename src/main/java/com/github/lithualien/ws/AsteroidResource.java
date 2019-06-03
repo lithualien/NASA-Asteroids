@@ -114,7 +114,6 @@ public class AsteroidResource {
                 .build();
     }
 
-
     /**
      * Web service method to forward the web service to another class, see AsteroidApproachDataResource.
      * @param asteroidID the id of the asteroid.
@@ -126,6 +125,7 @@ public class AsteroidResource {
         return new AsteroidApproachDataResource();
     }
 
+    
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/close-approaches")
     public CloseApproachResource getCloseApproaches() {
@@ -144,6 +144,21 @@ public class AsteroidResource {
            @PathParam("id") int id) {
         return Response.ok(200)
                 .entity(dao.deleteAsteroid(id))
+                .build();
+    }
+    
+    /**
+     * Web service method that finds asteroid by its name
+     * @param name of the asteroid
+     * @return asteroid object
+     */
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/name")
+    public Response getAsteroidByName(
+           @DefaultValue("1991 BA") @QueryParam("name") String name) {
+        return Response.ok(200)
+                .entity(dao.getAsteroidByName(name))
                 .build();
     }
 }

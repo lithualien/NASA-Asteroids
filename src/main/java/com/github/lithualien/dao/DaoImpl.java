@@ -349,4 +349,24 @@ public class DaoImpl implements Dao {
             return false;
         }
     }
+    
+    /**
+     * Gets asteroid by its name
+     * @param name of the asteroid 
+     * @return asteroid object
+     */
+    @Override
+    public List<Asteroid> getAsteroidByName(String name) {
+        List<Asteroid> AsteroidsList = new ArrayList<>();
+        String query = "SELECT * FROM `asteroidas` WHERE name = '" + name + "'";
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setAsteroids(AsteroidsList);
+        }
+        catch (SQLException ex) {
+        }
+        return AsteroidsList;
+    }
 }

@@ -141,7 +141,7 @@ public class CloseApproach {
     }
 
     /**
-     * get relative velocity
+     * Get relative velocity
      * @return 
      */
     public double getRelativeVelocity() {
