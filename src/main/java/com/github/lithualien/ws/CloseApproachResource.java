@@ -16,6 +16,7 @@ import javax.ws.rs.core.Response;
 /**
  * Class for Close approaches information
  * @author Tautvydas
+ * @author Andrius Venckus
  */
 @Path("/close-approach")
 
@@ -24,7 +25,7 @@ public class CloseApproachResource {
     
     /**
      * Web service method for getting fastest close approaches
-     * @param size the amounnt of object to be returned in descending order
+     * @param size the amount of object to be returned in descending order
      * @return Response
      */
     @GET
@@ -38,8 +39,8 @@ public class CloseApproachResource {
     }
     
     /**
-     * Web service method for getting the biggest propability of hitting the orbiting body
-     * @param size the amounnt of object to be returned in descending order
+     * Web service method for getting the biggest probability of hitting the orbiting body
+     * @param size the amount of object to be returned in descending order
      * @return Response
      */
     @GET
