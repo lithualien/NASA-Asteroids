@@ -11,14 +11,14 @@ package com.github.lithualien.data;
  */
 public class CloseApproach {
     
-    int id;
-    int asteroidId;
-    String closeApproachDate;
-    double relativeVelocity;
-    double missDistance;
-    String orbitBody;
-    String linkOfAsteroid;
-    double impactPropability; 
+    private int id;
+    private int asteroidId;
+    private String closeApproachDate;
+    private double relativeVelocity;
+    private double missDistance;
+    private String orbitBody;
+    private String linkOfAsteroid;
+    private double impactPropability; 
 
     /**
      * 
@@ -29,7 +29,7 @@ public class CloseApproach {
      * @param missDistance - asteroid miss distance
      * @param orbitBody - asteroid orbiting body
      * @param linkOfAsteroid - link of asteroid
-     * @param impactPropability - propability of hitting the orbiting body
+     * @param impactPropability - probability of orbiting body hitting
      */
     public CloseApproach(int id, int asteroidId, String closeApproachDate, double relativeVelocity, double missDistance, String orbitBody, double impactPropability, String linkOfAsteroid) {
         this.id = id;
@@ -43,7 +43,7 @@ public class CloseApproach {
     }
 
     /**
-     * Gets impact propability
+     * Gets impact probability
      * @return 
      */
     public double getImpactPropability() {
@@ -51,7 +51,7 @@ public class CloseApproach {
     }
 
     /**
-     * Sets impact propability
+     * Sets impact probability
      * @param impactPropability 
      */
     public void setImpactPropability(double impactPropability) {
@@ -67,7 +67,7 @@ public class CloseApproach {
     }
 
     /**
-     * Sets Ling of asteroid
+     * Sets Link of asteroid
      * @param linkOfAsteroid 
      */
     public void setLinkOfAsteroid(String linkOfAsteroid) {
@@ -82,7 +82,7 @@ public class CloseApproach {
     }
     
     /**
-     * Geting ID
+     * Getting ID
      * @return 
      */
     public int getId() {
@@ -115,7 +115,7 @@ public class CloseApproach {
     
 
     /**
-     * Get apprach appraoch data
+     * Get approach of approach data
      * @return 
      */
     public String getCloseApproachDate() {
