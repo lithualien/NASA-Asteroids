@@ -10,24 +10,26 @@ package com.github.lithualien.data;
  * @author Tautvydas
  */
 public class Links {
+
     private String self;
     private String nasa;
-    
-    public Links(String self)
-    {
+
+    public Links(String self) {
         this.self = self;
     }
-    
-    public Links(String self, String nasa)
-    {
+
+    public Links(String self, String nasa) {
         this.nasa = nasa;
         this.self = self;
     }
-    
-     public void setSelf(String self) {
+
+    Links() {
+
+    }
+
+    public void setSelf(String self) {
         this.self = self;
     }
-     
 
     public String getNasa() {
         return nasa;
@@ -36,12 +38,9 @@ public class Links {
     public void setNasa(String nasa) {
         this.nasa = nasa;
     }
-    
-    
 
     public String getSelf() {
         return self;
     }
 
-   
 }

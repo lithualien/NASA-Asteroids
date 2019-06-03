@@ -24,6 +24,8 @@ public class CloseApproach {
     private double impactPropability; 
     private List<Links> links = new ArrayList();
 
+    
+
 
     /**
      * 
@@ -54,6 +56,10 @@ public class CloseApproach {
   
      public List<Links> getLink() {
         return links;
+    }
+     
+     public void setLinks(List<Links> links) {
+        this.links = links;
     }
 
     public void addLink(Links link) {
