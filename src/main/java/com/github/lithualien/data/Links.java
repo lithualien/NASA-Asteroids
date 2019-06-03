@@ -16,16 +16,23 @@ public class Links {
     private String nasa;
     private String closeApproach;
 
-    
+    /**
+     * Method to get the closes approaches.
+     * @return the closest approach.
+     */
     public String getCloseApproach() {
         return closeApproach;
     }
 
+    /**
+     * Method to set the closes approaches.
+     * @param closeApproach the closest approach.
+     */
     public void setCloseApproach(String closeApproach) {
         this.closeApproach = closeApproach;
     }
     
-       /**
+    /**
      * Constructor to set the variables about the link.
      * @param self is self of the link to the nasa website of the asteroid 
      */
@@ -46,21 +53,23 @@ public class Links {
     
     /**
      * Constructor to set the variables about the link.
-     * @param self is self of the link to the nasa website of the asteroid 
+     * @param self is self of the link to the nasa website of the asteroid.
      */
     public void setSelf(String self) {
         this.self = self;
     }
-     
-    /**
-     * Method to get the link .
-     * @return  the nasa of the link
-     */
 
+    /**
+     * Default class constructor.
+     */
     Links() {
 
     }
 
+    /**
+     * Method to get the link .
+     * @return  the nasa of the link.
+     */
     public String getNasa() {
         return nasa;
     }

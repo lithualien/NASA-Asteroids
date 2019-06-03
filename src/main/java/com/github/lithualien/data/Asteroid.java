@@ -83,7 +83,6 @@ public class Asteroid {
      * Method to set the name of the asteroid.
      * @param name the name of the asteroid.
      */
-
     public void setName(String name) {
         this.name = name;
     }
@@ -92,7 +91,6 @@ public class Asteroid {
      * Method to set the vInfinity of the asteroid.
      * @param vInfinity the vInfinity of the asteroid.
      */
-
     public void setVInfinity(double vInfinity) {
         this.vInfinity = vInfinity;
     }
@@ -101,7 +99,6 @@ public class Asteroid {
      * Method to set the estimated_diameter_max of the asteroid.
      * @param estimated_diameter_max the estimated_diameter_max of the asteroid.
      */
-
     public void setEstimatedDiameterMax(double estimated_diameter_max) {
         this.estimated_diameter_max = estimated_diameter_max;
     }
@@ -110,7 +107,6 @@ public class Asteroid {
      * Method to set the amount of estimated_diameter_min of the asteroid.
      * @param estimated_diameter_min the estimated_diameter_min of the asteroid
      */
-
     public void setEstimatedDiameterMin(double estimated_diameter_min) {
         this.estimated_diameter_min = estimated_diameter_min;
     }
@@ -119,7 +115,6 @@ public class Asteroid {
      * Method to set the potential_hazardous of the asteroid.
      * @param potential_hazardous the potential_hazardous  of the asteroid.
      */
-
     public void setPotentialHazardous(boolean potential_hazardous) {
         this.potential_hazardous = potential_hazardous;
     }
@@ -128,7 +123,6 @@ public class Asteroid {
      * Method to get the ID of the asteroid.
      * @return the value of the ID.
      */
-
     public int getID() {
         return ID;
     }
@@ -137,7 +131,6 @@ public class Asteroid {
      * Method to get the object_link of the asteroid.
      * @return the value of the object_link.
      */
-
     public String getObjectLink() {
         return object_link;
     }
@@ -146,7 +139,6 @@ public class Asteroid {
      * Method to get the name of the asteroid.
      * @return the value of the name type.
      */
-
     public String getName() {
         return name;
     }
@@ -155,7 +147,6 @@ public class Asteroid {
      * Method to get the vInfinity of the asteroid.
      * @return the vInfinity of the asteroid.
      */
-
     public double getVInfinity() {
         return vInfinity;
     }
@@ -164,7 +155,6 @@ public class Asteroid {
      * Method to get the estimated_diameter_max of the asteroid.
      * @return the estimated_diameter_max of the asteroid.
      */
-
     public double getEstimatedDiameterMax() {
         return estimated_diameter_max;
     }
@@ -173,7 +163,6 @@ public class Asteroid {
      * Method to get the estimated_diameter_min of the asteroid.
      * @return the estimated_diameter_min of the asteroid.
      */
-
     public double getEstimatedDiameterMin() {
         return estimated_diameter_min;
     }
@@ -182,7 +171,6 @@ public class Asteroid {
      * Method to get the potential_hazardous true or false of the asteroid.
      * @return the potential_hazardous return true or false of the asteroid
      */
-
     public boolean getPotentialHazardous() {
         return potential_hazardous;
     }
