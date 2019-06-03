@@ -114,6 +114,7 @@ public class AsteroidResource {
                 .build();
     }
 
+
     /**
      * Web service method to forward the web service to another class, see AsteroidApproachDataResource.
      * @param asteroidID the id of the asteroid.
@@ -129,5 +130,20 @@ public class AsteroidResource {
     @Path("/close-approaches")
     public CloseApproachResource getCloseApproaches() {
         return new CloseApproachResource();
+
+    
+    /**
+     * Web service method for getting biggest asteroids by max diameter
+     * @param id id of asteroid
+     * @return 
+     */
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("{id}")
+    public Response deleteAsteroid(
+           @PathParam("id") int id) {
+        return Response.ok(200)
+                .entity(dao.deleteAsteroid(id))
+                .build();
     }
 }

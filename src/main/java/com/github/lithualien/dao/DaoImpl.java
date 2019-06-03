@@ -157,7 +157,8 @@ public class DaoImpl implements Dao {
                     result.getString("close_approach_date"),
                     result.getDouble("relative_velocity"),
                     result.getDouble("miss_distance"),
-                    result.getDouble("impact_propability")
+                    result.getString("orbit_body"),
+                    result.getDouble("impact_probability")
             );
             closeApproach.addLink(link);
             closeApproachList.add(closeApproach);
@@ -332,5 +333,21 @@ public class DaoImpl implements Dao {
         catch (SQLException ex) {
         }
         return AsteroidsList;
+    }
+    
+    @Override
+    public boolean deleteAsteroid(int id) {
+        List<Asteroid> AsteroidsList = new ArrayList<>();
+        String query = "DELETE asteroidas, close_approach FROM asteroidas INNER JOIN close_approach ON close_approach.asteroid_id = asteroidas.ID WHERE asteroidas.ID = " + id;
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            statement.executeUpdate(query);
+            return true;
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
 }

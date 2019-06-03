@@ -1,6 +1,6 @@
 com\github\lithualien\data\Asteroid.class
 com\github\lithualien\dao\Dao.class
-com\github\lithualien\ws\CloseApproachResource.class
 com\github\lithualien\dao\DaoImpl.class
+com\github\lithualien\ws\CloseApproachResource.class
 com\github\lithualien\ws\AsteroidResource.class
 com\github\lithualien\data\CloseApproach.class

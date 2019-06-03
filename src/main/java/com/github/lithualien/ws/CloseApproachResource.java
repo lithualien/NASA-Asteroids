@@ -18,6 +18,7 @@ import javax.ws.rs.core.Response;
  * @author Tautvydas
  */
 @Path("/close-approach")
+
 public class CloseApproachResource {
     private Dao dao = new DaoImpl();
     
