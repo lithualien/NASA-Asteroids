@@ -5,6 +5,9 @@
  */
 package com.github.lithualien.data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Tautvydas
@@ -19,6 +22,9 @@ public class CloseApproach {
     String orbitBody;
     String linkOfAsteroid;
     double impactPropability; 
+    private List<Links> links = new ArrayList();
+
+   
 
     /**
      * 
@@ -28,17 +34,15 @@ public class CloseApproach {
      * @param relativeVelocity - asteroid relative velocity
      * @param missDistance - asteroid miss distance
      * @param orbitBody - asteroid orbiting body
-     * @param linkOfAsteroid - link of asteroid
      * @param impactPropability - propability of hitting the orbiting body
      */
-    public CloseApproach(int id, int asteroidId, String closeApproachDate, double relativeVelocity, double missDistance, String orbitBody, double impactPropability, String linkOfAsteroid) {
+    public CloseApproach(int id, int asteroidId, String closeApproachDate, double relativeVelocity, double missDistance, String orbitBody, double impactPropability) {
         this.id = id;
         this.asteroidId = asteroidId;
         this.closeApproachDate = closeApproachDate;
         this.relativeVelocity = relativeVelocity;
         this.missDistance = missDistance;
         this.orbitBody = orbitBody;
-        this.linkOfAsteroid = linkOfAsteroid;
         this.impactPropability = impactPropability;
     }
 
@@ -48,6 +52,15 @@ public class CloseApproach {
      */
     public double getImpactPropability() {
         return impactPropability;
+    }
+    
+  
+     public List<Links> getLink() {
+        return links;
+    }
+
+    public void addLink(Links link) {
+        links.add(link);
     }
 
     /**
