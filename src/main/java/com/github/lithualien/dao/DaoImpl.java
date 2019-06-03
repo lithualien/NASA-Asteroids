@@ -153,7 +153,7 @@ public class DaoImpl implements Dao {
                     result.getDouble("relative_velocity"),
                     result.getDouble("miss_distance"),
                     result.getString("orbit_body"),
-                    result.getDouble("impact_propability"),
+                    result.getDouble("impact_probability"),
                     "http://localhost:8080/NASA-Asteroids/services/asteroids/" + result.getInt("asteroid_Id")
             );
             closeApproachList.add(closeApproach);
@@ -193,7 +193,7 @@ public class DaoImpl implements Dao {
     @Override
     public List<CloseApproach> getMissDistanceOfCloseApproach(double from) {
         List<CloseApproach> closeApproachList = new ArrayList<>();
-        String query = "SELECT * FROM close_approach WHERE miss_distance >= " + from +" ORDER BY miss_distance DESC";
+        String query = "SELECT * FROM close_approach WHERE miss_distance >= " + from + " ORDER BY miss_distance DESC";
         Statement statement;
         try {
             statement = connection.prepareStatement(query);
@@ -204,12 +204,30 @@ public class DaoImpl implements Dao {
         }
         return closeApproachList;
     }
-    
-    
+
     @Override
     public List<CloseApproach> getCloseApproachesOfPlanets(String planetName) {
         List<CloseApproach> closeApproachList = new ArrayList<>();
         String query = "SELECT * FROM close_approach WHERE orbit_body = " + "'" + planetName + "'";
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setCloseApproachData(closeApproachList);
+        }
+        catch (SQLException ex) {
+        }
+        return closeApproachList;
+    }
+
+    /**
+     * Get all asteroid's close approaches in the past and the future.
+     * @param asteroidID the id of the asteroid.
+     * @return the list of all close approaches.
+     */
+    public List<CloseApproach> getCloseApproach(int asteroidID) {
+        List<CloseApproach> closeApproachList = new ArrayList<>();
+        String query = "SELECT * FROM close_approach WHERE asteroid_id = '" + asteroidID + "';";
         Statement statement;
         try {
             statement = connection.prepareStatement(query);

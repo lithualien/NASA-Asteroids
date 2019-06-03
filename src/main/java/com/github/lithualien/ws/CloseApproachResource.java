@@ -3,7 +3,6 @@ package com.github.lithualien.ws;
 import com.github.lithualien.dao.Dao;
 import com.github.lithualien.dao.DaoImpl;
 import javax.ws.rs.DefaultValue;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -17,7 +16,6 @@ import javax.ws.rs.core.Response;
  */
 @Path("/close_approarch")
 public class CloseApproachResource {
-    
     private Dao dao = new DaoImpl();
     
     /**
@@ -29,8 +27,7 @@ public class CloseApproachResource {
     @Path("/fastest")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getFastestCloseApproaches(
-               @DefaultValue("5") @QueryParam("size") int size) {
-                
+                @DefaultValue("5") @QueryParam("size") int size) {
         return Response.ok(200)
                 .entity(dao.getFastestCloseApproaches(size))
                 .build();
@@ -46,7 +43,6 @@ public class CloseApproachResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getBiggestProbOfHitting(
                @DefaultValue("5") @QueryParam("size") int size) {
-                
          return Response.ok(200)
                 .entity(dao.getBiggestProbOfHitting(size))
                 .build();
@@ -62,7 +58,7 @@ public class CloseApproachResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getMissDistanceOfCloseApproach(
                 @QueryParam("from") double from) {
-                
+
          return Response.ok(200)
                 .entity(dao.getMissDistanceOfCloseApproach(from))
                 .build();

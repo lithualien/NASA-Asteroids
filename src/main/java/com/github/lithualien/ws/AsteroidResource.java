@@ -28,15 +28,15 @@ public class AsteroidResource {
 
     /**
      * Web service method to fetch a specific asteroid.
-     * @param id the if of the asteroid.
+     * @param asteroidID the if of the asteroid.
      * @return asteroid object, of selected asteroid.
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{id}")
-    public Response getAsteroid(@PathParam("id") int id) {
+    @Path("/{asteroidID}")
+    public Response getAsteroid(@PathParam("asteroidID") int asteroidID) {
         return Response.ok(200)
-                .entity(dao.getAsteroid(id))
+                .entity(dao.getAsteroid(asteroidID))
                 .build();
     }
 
@@ -112,5 +112,15 @@ public class AsteroidResource {
         return Response.ok(200)
                 .entity(dao.getSmallestAsteroids(size))
                 .build();
+
+    /**
+     * Web service method to forward the web service to another class, see AsteroidApproachDataResource.
+     * @param asteroidID the id of the asteroid.
+     * @return the AsteroidApproachDataResource class object.
+     */
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{asteroidID}/approach-data")
+    public AsteroidApproachDataResource getApproachData(@PathParam("asteroidID") int asteroidID) {
+        return new AsteroidApproachDataResource();
     }
 }
