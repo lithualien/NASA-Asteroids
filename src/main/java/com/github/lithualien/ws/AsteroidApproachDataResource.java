@@ -8,6 +8,11 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+**
+ * Web service to fetch data about the Asteroid Approach Data Resourse.
+ * @author Tomas Dominauskas
+ */
+
 public class AsteroidApproachDataResource {
     private Dao dao = new DaoImpl();
 

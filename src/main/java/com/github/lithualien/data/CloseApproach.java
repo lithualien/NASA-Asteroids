@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Class to define all the attributes about the close Approach.
  * @author Tautvydas
+ * @author Andrius Venckus
  */
 public class CloseApproach {
 
@@ -21,18 +22,18 @@ public class CloseApproach {
     private double missDistance;
     private String orbitBody;
     private String linkOfAsteroid;
-    private double impactPropability; 
+    private double impactPropability;
     private List<Links> links = new ArrayList();
 
 
     /**
-     * 
+     *
      * @param id - id of asteroid approach data
      * @param asteroidId - id of asteroid
-     * @param closeApproachDate - asteroid close approach date 
+     * @param closeApproachDate - asteroid close approach date
      * @param relativeVelocity - asteroid relative velocity
      * @param missDistance - asteroid miss distance
-     * @param impactPropability - propability of hitting the orbiting body
+     * @param impactPropability - probability of hitting the orbiting body
      */
     public CloseApproach(int id, int asteroidId, String closeApproachDate, double relativeVelocity, double missDistance, double impactPropability) {
         this.id = id;
@@ -45,111 +46,118 @@ public class CloseApproach {
 
     /**
      * Gets impact probability
-     * @return 
+     * @return impactPropability of the close Approach
      */
     public double getImpactPropability() {
         return impactPropability;
     }
-    
-  
+
+    /**
+     * Gets links of the close approach.
+     * @return links of the close Approach
+     */
      public List<Links> getLink() {
         return links;
     }
 
+    /**
+     * This method add to list
+     * @param link add to links list
+     */
     public void addLink(Links link) {
         links.add(link);
     }
 
     /**
-     * Sets impact probability
-     * @param impactPropability 
+     * This method sets impact probability for the close approach
+     * @param impactPropability is the impactPropability of the close approach
      */
     public void setImpactPropability(double impactPropability) {
         this.impactPropability = impactPropability;
     }
 
     /**
-     * Gets link of asteroid
-     * @return 
+     * This method gets link of asteroid
+     * @return  the link of the asteroid
      */
     public String getLinkOfAsteroid() {
         return linkOfAsteroid;
     }
 
     /**
-     * Sets Link of asteroid
-     * @param linkOfAsteroid 
+     * This method sets Link of asteroid
+     * @param linkOfAsteroid set the link of the asteroid
      */
     public void setLinkOfAsteroid(String linkOfAsteroid) {
         this.linkOfAsteroid = linkOfAsteroid;
     }
-    
+
     /**
      * Default constructor
      */
     public CloseApproach() {
-        
+
     }
-    
+
     /**
-     * Getting ID
-     * @return 
+     * This method getting ID of the close approach
+     * @return id of the close approach
      */
     public int getId() {
         return id;
     }
 
     /**
-     * Setting ID
-     * @param id 
+     * This method setting ID of the close approach
+     * @param id  is id of the close approach
      */
     public void setId(int id) {
         this.id = id;
     }
 
     /**
-     * Get asteroid id
-     * @return 
+     * This method get asteroid id of the close approach
+     * @return  asteroidId of the close approach
      */
     public int getAsteroidId() {
         return asteroidId;
     }
 
     /**
-     * Set asteroid id
-     * @param asteroidId
+     * This method set asteroid id for the close approach
+     * @param asteroidId get asteroid id
      */
     public void setAsteroidId(int asteroidId) {
         this.asteroidId = asteroidId;
     }
-    
+
 
     /**
-     * Get approach of approach data
-     * @return 
+     * This method get approach of approach data
+     * @return closeApproachDate of the close approach date
      */
     public String getCloseApproachDate() {
         return closeApproachDate;
     }
 
     /**
-     * Set close approach data
-     * @param closeApproachDate
+     * This method set close approach data
+     * @param closeApproachDate is close approach date of the approach data
      */
     public void setCloseApproachDate(String closeApproachDate) {
         this.closeApproachDate = closeApproachDate;
     }
 
     /**
-     * Get relative velocity
-     * @return 
+     * This method get relative velocity
+     * @return relativeVelocity of the relative velocity
      */
     public double getRelativeVelocity() {
         return relativeVelocity;
     }
 
     /**
-     * set relative velocity
+     * This method set relative velocity
      * @param relativeVelocity
      */
     public void setRelativeVelocity(double relativeVelocity) {
@@ -157,37 +165,37 @@ public class CloseApproach {
     }
 
     /**
-     * get miss distance
-     * @return 
+     *  This method get miss distance
+     * @return missDistance of the close approach
      */
     public double getMissDistance() {
         return missDistance;
     }
 
     /**
-     * set miss distance
-     * @param missDistance
+     * This method set miss distance
+     * @param missDistance of the close approach
      */
     public void setMissDistance(double missDistance) {
         this.missDistance = missDistance;
     }
 
     /**
-     * get orbit data
-     * @return 
+     * This method get orbit data
+     * @return orbitBody of the close approach
      */
     public String getOrbitBody() {
         return orbitBody;
     }
 
     /**
-     * set orbit data
-     * @param orbitBody
+     * This method set orbit data
+     * @param orbitBody is the orbit Body of the close approach
      */
     public void setOrbitBody(String orbitBody) {
         this.orbitBody = orbitBody;
     }
-    
+
       /**
      * Method to get the information about the close approach.
      * @return Returns all the data about the close approach to a single String variable.
