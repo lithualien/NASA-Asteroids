@@ -19,5 +19,11 @@ public interface Dao {
     List<CloseApproach> getFastestCloseApproaches(int size);
     List<CloseApproach> getBiggestProbOfHitting(int size);
     List<CloseApproach> getMissDistanceOfCloseApproach(double from);
-    
+
+    /**
+     * Get all asteroid's close approaches in the past and the future.
+     * @param asteroidID the id of the asteroid.
+     * @return the list of all close approaches.
+     */
+    List<CloseApproach> getCloseApproach(int asteroidID);
 }
