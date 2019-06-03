@@ -16,14 +16,30 @@ public class Links {
     private String nasa;
     private String closeApproach;
 
+    /**
+     * Method to get the closes approaches.
+     * @return the closest approach.
+     */
+    public String getCloseApproach() {
+        return closeApproach;
+    }
+
+    /**
+     * Method to set the closes approaches.
+     * @param closeApproach the closest approach.
+     */
+    public void setCloseApproach(String closeApproach) {
+        this.closeApproach = closeApproach;
+    }
     
-     /**
+    /**
      * Constructor to set the variables about the link.
      * @param self is self of the link to the nasa website of the asteroid 
      */
     public Links(String self) {
         this.self = self;
     }
+
     /**
      * Constructor to set the variables about the link.
      * @param self is self of the link to the nasa website of the asteroid 
@@ -38,22 +54,22 @@ public class Links {
     
     /**
      * Constructor to set the variables about the link.
-     * @param self is self of the link to the nasa website of the asteroid 
+     * @param self is self of the link to the nasa website of the asteroid.
      */
     public void setSelf(String self) {
         this.self = self;
     }
-     
+
     /**
-     * Default constructor
+     * Default class constructor.
      */
     Links() {
 
     }
 
     /**
-     * Gets nasa link 
-     * @return nasa link
+     * Method to get the link .
+     * @return  the nasa of the link.
      */
     public String getNasa() {
         return nasa;
@@ -73,21 +89,5 @@ public class Links {
      */
     public String getSelf() {
         return self;
-    }
-    
-    /**
-     * Gets close approach link
-     * @return close approach link
-     */
-      public String getCloseApproach() {
-        return closeApproach;
-    }
-
-      /**
-       * Sets close approach link
-       * @param closeApproach close approach link
-       */
-    public void setCloseApproach(String closeApproach) {
-        this.closeApproach = closeApproach;
     }
 }

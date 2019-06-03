@@ -51,7 +51,7 @@ public interface Dao {
      /**
      * This method get Biggest probability Of Hitting 
      * @param size is the size of the biggest probability Of Hitting 
-     * @return
+     * @return the list of most dangerous asteroids.
      */
     List<CloseApproach> getBiggestProbOfHitting(int size);
       /**
@@ -62,7 +62,7 @@ public interface Dao {
       /**
      * This method  get close approaches of planets
      * @param planetName is the planet name of the close approach
-     * @return  closeApproachList of the close approach list 
+     * @return closeApproachList of the close approach list
      */
     List<CloseApproach> getCloseApproachesOfPlanets(String planetName);
      /**
@@ -108,7 +108,7 @@ public interface Dao {
     /**
      * Delete asteroid and its close approaches
      * @param id of asteroid
-     * @return true if succesfully deleted and false if not
+     * @return true if successfully deleted and false if not
      */
     boolean deleteAsteroid(int id);
     

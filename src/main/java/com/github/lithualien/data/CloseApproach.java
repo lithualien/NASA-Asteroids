@@ -22,11 +22,8 @@ public class CloseApproach {
     private double missDistance;
     private String orbitBody;
     private String linkOfAsteroid;
-    private double impactPropability;
+    private double impactProbability;
     private List<Links> links = new ArrayList();
-
-    
-
 
     /**
      *
@@ -35,23 +32,23 @@ public class CloseApproach {
      * @param closeApproachDate - asteroid close approach date
      * @param relativeVelocity - asteroid relative velocity
      * @param missDistance - asteroid miss distance
-     * @param impactPropability - probability of hitting the orbiting body
+     * @param impactProbability - probability of hitting the orbiting body
      */
-    public CloseApproach(int id, int asteroidId, String closeApproachDate, double relativeVelocity, double missDistance, double impactPropability) {
+    public CloseApproach(int id, int asteroidId, String closeApproachDate, double relativeVelocity, double missDistance, double impactProbability) {
         this.id = id;
         this.asteroidId = asteroidId;
         this.closeApproachDate = closeApproachDate;
         this.relativeVelocity = relativeVelocity;
         this.missDistance = missDistance;
-        this.impactPropability = impactPropability;
+        this.impactProbability = impactProbability;
     }
 
     /**
      * Gets impact probability
      * @return impactPropability of the close Approach
      */
-    public double getImpactPropability() {
-        return impactPropability;
+    public double getImpactProbability() {
+        return impactProbability;
     }
 
     /**
@@ -61,7 +58,11 @@ public class CloseApproach {
      public List<Links> getLink() {
         return links;
     }
-     
+
+    /**
+     * Method to set the links.
+     * @param links the link.
+     */
      public void setLinks(List<Links> links) {
         this.links = links;
     }
@@ -76,10 +77,10 @@ public class CloseApproach {
 
     /**
      * This method sets impact probability for the close approach
-     * @param impactPropability is the impactPropability of the close approach
+     * @param impactProbability is the impactProbability of the close approach
      */
-    public void setImpactPropability(double impactPropability) {
-        this.impactPropability = impactPropability;
+    public void setImpactPropability(double impactProbability) {
+        this.impactProbability = impactProbability;
     }
 
     /**
@@ -164,7 +165,7 @@ public class CloseApproach {
 
     /**
      * This method set relative velocity
-     * @param relativeVelocity
+     * @param relativeVelocity the relative velocity of the asteroid.
      */
     public void setRelativeVelocity(double relativeVelocity) {
         this.relativeVelocity = relativeVelocity;

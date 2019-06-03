@@ -65,7 +65,7 @@ public class DaoImpl implements Dao {
     }
     /**
      * This method set  asteroids 
-     * @param asteroid of the asteroid 
+     * @param asteroids of the asteroid
      */
     private void setAsteroids(List<Asteroid> asteroids) throws SQLException {
         while(result.next()) {
@@ -186,7 +186,7 @@ public class DaoImpl implements Dao {
     }
      /**
      * This method set close approach data 
-     * @param link is the link of the close approach data 
+     * @param closeApproachList is the link of the close approach data
      */
      private void setCloseApproachData(List<CloseApproach> closeApproachList) throws SQLException {
         while(result.next()) {
@@ -304,7 +304,6 @@ public class DaoImpl implements Dao {
 
     /**
      * Get all close approaches today.
-     *
      * @return the list of all close approaches today.
      */
     public List<CloseApproach> getCloseApproachesToday() {
@@ -323,7 +322,6 @@ public class DaoImpl implements Dao {
 
     /**
      * Get close approaches in the past of selected quantity, ordered from oldest to earliest.
-     *
      * @param quantity the quantity of results.
      * @return the list of all close approaches of past approaches by selected size.
      */
@@ -344,7 +342,6 @@ public class DaoImpl implements Dao {
 
     /**
      * Get close approaches in the future of selected quantity, ordered from oldest to earliest.
-     *
      * @param quantity the quantity of results.
      * @return the list of all close approaches of past approaches by selected size.
      */
@@ -408,7 +405,6 @@ public class DaoImpl implements Dao {
      */
     @Override
     public boolean deleteAsteroid(int id) {
-        List<Asteroid> AsteroidsList = new ArrayList<>();
         String query = "DELETE asteroidas, close_approach FROM asteroidas INNER JOIN close_approach ON close_approach.asteroid_id = asteroidas.ID WHERE asteroidas.ID = " + id;
         Statement statement;
         try {

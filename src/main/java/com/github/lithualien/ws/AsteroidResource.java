@@ -88,7 +88,7 @@ public class AsteroidResource {
     /**
      * Web service method for getting biggest asteroids by max diameter
      * @param size amount of returned objects
-     * @return 
+     * @return The list of the biggest asteroids.
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -102,7 +102,7 @@ public class AsteroidResource {
     /**
      * Web service method for getting biggest asteroids by max diameter
      * @param size amount of returned objects
-     * @return 
+     * @return the list of smallest asteroids.
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -125,7 +125,10 @@ public class AsteroidResource {
         return new AsteroidApproachDataResource();
     }
 
-    
+    /**
+     * Web service method to get the closes approaches.
+     * @return The list of closes approaches.
+     */
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/close-approaches")
     public CloseApproachResource getCloseApproaches() {
@@ -135,7 +138,7 @@ public class AsteroidResource {
     /**
      * Web service method for getting biggest asteroids by max diameter
      * @param id id of asteroid
-     * @return 
+     * @return the list of biggest asteroids.
      */
     @DELETE
     @Produces(MediaType.APPLICATION_JSON)

@@ -2,9 +2,6 @@ package com.github.lithualien.ws;
 
 import com.github.lithualien.dao.Dao;
 import com.github.lithualien.dao.DaoImpl;
-
-import javax.enterprise.inject.Default;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
