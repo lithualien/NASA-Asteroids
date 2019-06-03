@@ -157,9 +157,6 @@ public class DaoImpl implements Dao {
                     result.getString("close_approach_date"),
                     result.getDouble("relative_velocity"),
                     result.getDouble("miss_distance"),
-                    result.getString("orbit_body"),
-                    result.getDouble("impact_probability"),
-                    "http://localhost:8080/NASA-Asteroids/services/asteroids/" + result.getInt("asteroid_Id")
                     result.getDouble("impact_propability")
             );
             closeApproach.addLink(link);

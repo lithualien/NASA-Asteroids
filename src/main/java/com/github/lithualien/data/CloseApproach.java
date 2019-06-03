@@ -32,16 +32,14 @@ public class CloseApproach {
      * @param closeApproachDate - asteroid close approach date 
      * @param relativeVelocity - asteroid relative velocity
      * @param missDistance - asteroid miss distance
-     * @param orbitBody - asteroid orbiting body
      * @param impactPropability - propability of hitting the orbiting body
      */
-    public CloseApproach(int id, int asteroidId, String closeApproachDate, double relativeVelocity, double missDistance, String orbitBody, double impactPropability) {
+    public CloseApproach(int id, int asteroidId, String closeApproachDate, double relativeVelocity, double missDistance, double impactPropability) {
         this.id = id;
         this.asteroidId = asteroidId;
         this.closeApproachDate = closeApproachDate;
         this.relativeVelocity = relativeVelocity;
         this.missDistance = missDistance;
-        this.orbitBody = orbitBody;
         this.impactPropability = impactPropability;
     }
 
