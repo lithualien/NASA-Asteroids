@@ -157,7 +157,6 @@ public class DaoImpl implements Dao {
                     result.getString("close_approach_date"),
                     result.getDouble("relative_velocity"),
                     result.getDouble("miss_distance"),
-                    result.getString("orbit_body"),
                     result.getDouble("impact_probability")
             );
             closeApproach.addLink(link);

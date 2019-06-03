@@ -73,7 +73,7 @@ public class AsteroidResource {
     }
 
     /**
-     * Web service method to fetch hazardous asteroids.
+     * Web service method to fetch hazardous assteroids.
      * @return The list of hazardous asteroids.
      */
     @GET
@@ -131,7 +131,7 @@ public class AsteroidResource {
     public CloseApproachResource getCloseApproaches() {
         return new CloseApproachResource();
 
-    
+    }
     /**
      * Web service method for getting biggest asteroids by max diameter
      * @param id id of asteroid

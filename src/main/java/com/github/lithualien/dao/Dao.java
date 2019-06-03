@@ -48,8 +48,13 @@ public interface Dao {
      * @param quantity the quantity of results.
      * @return the list of all close approaches of past approaches by selected size.
      */
-    List<CloseApproach> getFutureCloseApproaches(int quantity);,
+    List<CloseApproach> getFutureCloseApproaches(int quantity);
     
+    /**
+     * Delete asteroid and its close approaches
+     * @param id of asteroid
+     * @return true if succesfully deleted and false if not
+     */
     boolean deleteAsteroid(int id);
     
 }
