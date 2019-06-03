@@ -7,6 +7,8 @@ package com.github.lithualien.data;
 
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Class to define all the attributes about the asteroid.
  * @author Andrius Venckus
@@ -18,7 +20,7 @@ public class Asteroid {
     private String object_link, name;
     private double vInfinity, estimated_diameter_max, estimated_diameter_min;
     private boolean potential_hazardous;
- 
+    private List<Links> links = new ArrayList();
 
     /**
      * Class constructor
@@ -30,18 +32,14 @@ public class Asteroid {
     /**
      * Class constructor to set all the variables about the asteroid.
      * @param ID the id of the asteroid.
-     * @param object_link the object_link of the asteroid.
      * @param name the name of the asteroid.
      * @param vInfinity the vInfinity of the asteroid.
      * @param estimated_diameter_max the estimated_diameter_max of the asteroid.
      * @param estimated_diameter_min the estimated_diameter_min of the asteroid.
      * @param potential_hazardous the potential_hazardous of the asteroid.
-
      */
-
-    public Asteroid(int ID, String object_link, String name, double vInfinity, double estimated_diameter_max, double estimated_diameter_min, boolean potential_hazardous) {
+    public Asteroid(int ID, String name, double vInfinity, double estimated_diameter_max, double estimated_diameter_min, boolean potential_hazardous) {
         this.ID = ID;
-        this.object_link = object_link;
         this.name = name;
         this.vInfinity = vInfinity;
         this.estimated_diameter_max = estimated_diameter_max;
@@ -53,16 +51,30 @@ public class Asteroid {
      * Method to set the id of the asteroid.
      * @param ID the id of the asteroid.
      */
-
     public void setID(int ID) {
         this.ID = ID;
+    }
+    
+    /**
+     * Adds link to LinksList 
+     * @param link link of object
+     */
+    public void addLink(Links link) {
+        links.add(link);
+    }
+    
+    /**
+     * Returns List of objects 
+     * @return links list
+     */
+     public List<Links> getLinks() {
+        return links;
     }
 
     /**
      * Method to set the object_link of the asteroid.
      * @param object_link the object link of the asteroid.
      */
-
     public void setObjectLink(String object_link) {
         this.object_link = object_link;
     }

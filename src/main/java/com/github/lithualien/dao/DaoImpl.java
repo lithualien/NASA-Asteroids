@@ -2,6 +2,7 @@ package com.github.lithualien.dao;
 
 import com.github.lithualien.data.Asteroid;
 import com.github.lithualien.data.CloseApproach;
+import com.github.lithualien.data.Links;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -55,24 +56,27 @@ public class DaoImpl implements Dao {
 
     private void setAsteroids(List<Asteroid> asteroids) throws SQLException {
         while(result.next()) {
+            Links link1 = new Links("http://localhost:8080/NASA-Asteroids/services/asteroids/" + result.getInt("ID"), result.getString("object_link"));
             Asteroid asteroid = new Asteroid(
                     result.getInt("ID"),
-                    result.getString("object_link"),
                     result.getString("name"),
                     result.getDouble("vInfinity"),
                     result.getDouble("estimated_diameter_max"),
                     result.getDouble("estimated_diameter_min"),
                     result.getBoolean("potential_hazardous")
             );
+            
+            asteroid.addLink(link1);
             asteroids.add(asteroid);
         }
     }
 
     private void setAsteroid(Asteroid asteroid) throws SQLException {
         while(result.next()) {
+            Links link1 = new Links(result.getString("object_link"));
+            asteroid.addLink(link1);
             asteroid.setID(result.getInt("ID"));
             asteroid.setVInfinity(result.getDouble("vInfinity"));
-            asteroid.setObjectLink(result.getString("object_link"));
             asteroid.setName(result.getString("name"));
             asteroid.setPotentialHazardous(result.getBoolean("potential_hazardous"));
             asteroid.setEstimatedDiameterMax(result.getDouble("estimated_diameter_max"));
@@ -146,6 +150,7 @@ public class DaoImpl implements Dao {
     
      private void setCloseApproachData(List<CloseApproach> closeApproachList) throws SQLException {
         while(result.next()) {
+            Links link = new Links("http://localhost:8080/NASA-Asteroids/services/asteroids/" + result.getInt("asteroid_Id"));
             CloseApproach closeApproach = new CloseApproach(
                     result.getInt("id"),
                     result.getInt("asteroid_Id"),
@@ -155,7 +160,9 @@ public class DaoImpl implements Dao {
                     result.getString("orbit_body"),
                     result.getDouble("impact_probability"),
                     "http://localhost:8080/NASA-Asteroids/services/asteroids/" + result.getInt("asteroid_Id")
+                    result.getDouble("impact_propability")
             );
+            closeApproach.addLink(link);
             closeApproachList.add(closeApproach);
         }
     }
