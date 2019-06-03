@@ -181,8 +181,8 @@ public class CloseApproach {
     }
     
       /**
-     * Method to get the information about the asteroid.
-     * @return Returns all the data about the asteroid to a single String variable.
+     * Method to get the information about the close approach.
+     * @return Returns all the data about the close approach to a single String variable.
      */
     public String toString() {
         NumberFormat format = NumberFormat.getCurrencyInstance();
