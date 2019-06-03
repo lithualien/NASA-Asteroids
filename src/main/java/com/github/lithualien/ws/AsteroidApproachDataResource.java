@@ -20,7 +20,7 @@ public class AsteroidApproachDataResource {
     @PathParam(MediaType.APPLICATION_JSON)
     public Response getCloseApproach(@PathParam("asteroidID") int asteroidID) {
         return Response.ok(200)
-                .entity(dao.getCloseApproach(asteroidID))
+                .entity(dao.getCloseApproaches(asteroidID))
                 .build();
     }
 }

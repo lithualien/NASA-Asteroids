@@ -225,7 +225,7 @@ public class DaoImpl implements Dao {
      * @param asteroidID the id of the asteroid.
      * @return the list of all close approaches.
      */
-    public List<CloseApproach> getCloseApproach(int asteroidID) {
+    public List<CloseApproach> getCloseApproaches(int asteroidID) {
         List<CloseApproach> closeApproachList = new ArrayList<>();
         String query = "SELECT * FROM close_approach WHERE asteroid_id = '" + asteroidID + "';";
         Statement statement;
@@ -238,7 +238,68 @@ public class DaoImpl implements Dao {
         }
         return closeApproachList;
     }
-    
+
+    /**
+     * Get all close approaches today.
+     *
+     * @return the list of all close approaches today.
+     */
+    public List<CloseApproach> getCloseApproachesToday() {
+        List<CloseApproach> closeApproachList = new ArrayList<>();
+        String query = "SELECT * FROM close_approach WHERE close_approach_date = current_date();";
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setCloseApproachData(closeApproachList);
+        }
+        catch (SQLException ex) {
+        }
+        return closeApproachList;
+    }
+
+    /**
+     * Get close approaches in the past of selected quantity, ordered from oldest to earliest.
+     *
+     * @param quantity the quantity of results.
+     * @return the list of all close approaches of past approaches by selected size.
+     */
+    public List<CloseApproach> getPastCloseApproaches(int quantity) {
+        List<CloseApproach> closeApproachList = new ArrayList<>();
+        String query = "SELECT * FROM close_approach WHERE close_approach_date < current_date() ORDER BY close_approach_date DESC limit " + quantity;
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setCloseApproachData(closeApproachList);
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return closeApproachList;
+    }
+
+    /**
+     * Get close approaches in the future of selected quantity, ordered from oldest to earliest.
+     *
+     * @param quantity the quantity of results.
+     * @return the list of all close approaches of past approaches by selected size.
+     */
+    public List<CloseApproach> getFutureCloseApproaches(int quantity) {
+        List<CloseApproach> closeApproachList = new ArrayList<>();
+        String query = "SELECT * FROM close_approach WHERE close_approach_date > current_date() ORDER BY close_approach_date ASC limit " + quantity;
+        Statement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            result = statement.executeQuery(query);
+            setCloseApproachData(closeApproachList);
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return closeApproachList;
+    }
+
     @Override
     public List<Asteroid> getBiggestAsteroids(int size) {
         List<Asteroid> AsteroidsList = new ArrayList<>();

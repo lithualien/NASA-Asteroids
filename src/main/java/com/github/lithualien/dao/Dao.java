@@ -28,5 +28,25 @@ public interface Dao {
      * @param asteroidID the id of the asteroid.
      * @return the list of all close approaches.
      */
-    List<CloseApproach> getCloseApproach(int asteroidID);
+    List<CloseApproach> getCloseApproaches(int asteroidID);
+
+    /**
+     * Get all close approaches today.
+     * @return the list of all close approaches today.
+     */
+    List<CloseApproach> getCloseApproachesToday();
+
+    /**
+     * Get close approaches in the past of selected quantity, ordered from oldest to earliest.
+     * @param quantity the quantity of results.
+     * @return the list of all close approaches of past approaches by selected size.
+     */
+    List<CloseApproach> getPastCloseApproaches(int quantity);
+
+    /**
+     * Get close approaches in the future of selected quantity, ordered from oldest to earliest.
+     * @param quantity the quantity of results.
+     * @return the list of all close approaches of past approaches by selected size.
+     */
+    List<CloseApproach> getFutureCloseApproaches(int quantity);
 }
