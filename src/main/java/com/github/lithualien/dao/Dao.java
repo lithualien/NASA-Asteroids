@@ -22,5 +22,6 @@ public interface Dao {
     List<CloseApproach> getCloseApproachesOfPlanets(String planetName);
     List<Asteroid> getBiggestAsteroids(int size);
     List<Asteroid> getSmallestAsteroids(int size);
+    boolean deleteAsteroid(int id);
     
 }

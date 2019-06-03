@@ -92,7 +92,7 @@ public class AsteroidResource {
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/biggest_asteroids")
+    @Path("/biggest-asteroids")
     public Response getBiggestAsteroids(
            @DefaultValue("3") @QueryParam("size") int size) {
         return Response.ok(200)
@@ -106,11 +106,26 @@ public class AsteroidResource {
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/smallest_asteroids")
+    @Path("/smallest-asteroids")
     public Response getSmallestAsteroids(
            @DefaultValue("3") @QueryParam("size") int size) {
         return Response.ok(200)
                 .entity(dao.getSmallestAsteroids(size))
+                .build();
+    }
+    
+    /**
+     * Web service method for getting biggest asteroids by max diameter
+     * @param id id of asteroid
+     * @return 
+     */
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("{id}")
+    public Response deleteAsteroid(
+           @PathParam("id") int id) {
+        return Response.ok(200)
+                .entity(dao.deleteAsteroid(id))
                 .build();
     }
 }

@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response;
  * Class for Close approaches information
  * @author Tautvydas
  */
-@Path("/close_approarch")
+@Path("/close-approarch")
 public class CloseApproachResource {
     
     private Dao dao = new DaoImpl();
@@ -42,7 +42,7 @@ public class CloseApproachResource {
      * @return Response
      */
     @GET
-    @Path("/biggest_prop")
+    @Path("/biggest-prop")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getBiggestProbOfHitting(
                @DefaultValue("5") @QueryParam("size") int size) {
@@ -58,7 +58,7 @@ public class CloseApproachResource {
      * @return Response
      */
     @GET
-    @Path("/miss_distance")
+    @Path("/miss-distance")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getMissDistanceOfCloseApproach(
                 @QueryParam("from") double from) {
