@@ -11,6 +11,7 @@ package com.github.lithualien.data;
  * @author Andrius Venckus
  */
 public class Links {
+
     private String self;
     private String nasa;
     private String closeApproach;
@@ -28,19 +29,16 @@ public class Links {
      * Constructor to set the variables about the link.
      * @param self is self of the link to the nasa website of the asteroid 
      */
-    public Links(String self)
-    {
+    public Links(String self) {
         this.self = self;
     }
-    
-    public Links(String self, String nasa, String closeApproach)
     /**
      * Constructor to set the variables about the link.
      * @param self is self of the link to the nasa website of the asteroid 
      * @param nasa is nasa of the link to the nasa website of the asteroid 
      * @param closeApproach link of close approach 
      */
-    {
+    public Links(String self, String nasa, String closeApproach) {
         this.nasa = nasa;
         this.self = self;
         this.closeApproach = closeApproach;
@@ -58,6 +56,11 @@ public class Links {
      * Method to get the link .
      * @return  the nasa of the link
      */
+
+    Links() {
+
+    }
+
     public String getNasa() {
         return nasa;
     }
