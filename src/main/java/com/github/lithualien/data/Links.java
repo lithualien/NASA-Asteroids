@@ -12,16 +12,27 @@ package com.github.lithualien.data;
 public class Links {
     private String self;
     private String nasa;
+    private String closeApproach;
+
+    
+    public String getCloseApproach() {
+        return closeApproach;
+    }
+
+    public void setCloseApproach(String closeApproach) {
+        this.closeApproach = closeApproach;
+    }
     
     public Links(String self)
     {
         this.self = self;
     }
     
-    public Links(String self, String nasa)
+    public Links(String self, String nasa, String closeApproach)
     {
         this.nasa = nasa;
         this.self = self;
+        this.closeApproach = closeApproach;
     }
     
      public void setSelf(String self) {
@@ -37,11 +48,7 @@ public class Links {
         this.nasa = nasa;
     }
     
-    
-
     public String getSelf() {
         return self;
     }
-
-   
 }

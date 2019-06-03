@@ -56,7 +56,7 @@ public class DaoImpl implements Dao {
 
     private void setAsteroids(List<Asteroid> asteroids) throws SQLException {
         while(result.next()) {
-            Links link1 = new Links("http://localhost:8080/NASA-Asteroids/services/asteroids/" + result.getInt("ID"), result.getString("object_link"));
+            Links link1 = new Links("http://localhost:8080/NASA-Asteroids/services/asteroids/" + result.getInt("ID"), result.getString("object_link"), "http://localhost:8080/NASA-Asteroids/services/asteroids/"+ result.getInt("ID") +"/approach-data");
             Asteroid asteroid = new Asteroid(
                     result.getInt("ID"),
                     result.getString("name"),
