@@ -65,7 +65,7 @@ public class DaoImpl implements Dao {
     }
     /**
      * This method set  asteroids 
-     * @param asteroid of the asteroid 
+     * @param asteroids of the asteroid
      */
     private void setAsteroids(List<Asteroid> asteroids) throws SQLException {
         while(result.next()) {
@@ -186,7 +186,7 @@ public class DaoImpl implements Dao {
     }
      /**
      * This method set close approach data 
-     * @param link is the link of the close approach data 
+     * @param closeApproachList is the link of the close approach data
      */
      private void setCloseApproachData(List<CloseApproach> closeApproachList) throws SQLException {
         while(result.next()) {
