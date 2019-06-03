@@ -5,6 +5,8 @@
  */
 package com.github.lithualien.data;
 
+import java.text.NumberFormat;
+
 /**
  *
  * @author Tautvydas
@@ -178,4 +180,13 @@ public class CloseApproach {
         this.orbitBody = orbitBody;
     }
     
+      /**
+     * Method to get the information about the asteroid.
+     * @return Returns all the data about the asteroid to a single String variable.
+     */
+    public String toString() {
+        NumberFormat format = NumberFormat.getCurrencyInstance();
+        return id + ". Asteroid id: " + asteroidId + " | Close Approach Date: " + closeApproachDate + " | Eelative Velocity: " + relativeVelocity + " | Miss Distance: " + missDistance + " | Orbit Body: " + orbitBody + "\n";
+    }
+
 }
