@@ -49,8 +49,8 @@ public class AsteroidResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/diameter")
-    public Response getAsteroidsByDiameter(@QueryParam("from") double from,
-                                           @QueryParam("to") double to) {
+    public Response getAsteroidsByDiameter(@DefaultValue("0") @QueryParam("from") double from,
+                                           @DefaultValue("30")@QueryParam("to") double to) {
         return Response.ok(200)
                 .entity(dao.getAsteroidsByDiameterPlus(from, to))
                 .build();
@@ -65,8 +65,8 @@ public class AsteroidResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/velocity")
-    public Response getAsteroidsByVelocity(@QueryParam("from") double from,
-                                           @QueryParam("to") double to) {
+    public Response getAsteroidsByVelocity(@DefaultValue("1") @QueryParam("from") double from,
+                                           @DefaultValue("5") @QueryParam("to") double to) {
         return Response.ok(200)
                 .entity(dao.getAsteroidsByVelocity(from, to))
                 .build();
@@ -92,7 +92,7 @@ public class AsteroidResource {
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/biggest_asteroids")
+    @Path("/biggest-asteroids")
     public Response getBiggestAsteroids(
            @DefaultValue("3") @QueryParam("size") int size) {
         return Response.ok(200)
@@ -106,12 +106,13 @@ public class AsteroidResource {
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/smallest_asteroids")
+    @Path("/smallest-asteroids")
     public Response getSmallestAsteroids(
            @DefaultValue("3") @QueryParam("size") int size) {
         return Response.ok(200)
                 .entity(dao.getSmallestAsteroids(size))
                 .build();
+    }
 
     /**
      * Web service method to forward the web service to another class, see AsteroidApproachDataResource.
@@ -122,5 +123,11 @@ public class AsteroidResource {
     @Path("/{asteroidID}/approach-data")
     public AsteroidApproachDataResource getApproachData(@PathParam("asteroidID") int asteroidID) {
         return new AsteroidApproachDataResource();
+    }
+
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/close-approaches")
+    public CloseApproachResource getCloseApproaches() {
+        return new CloseApproachResource();
     }
 }
